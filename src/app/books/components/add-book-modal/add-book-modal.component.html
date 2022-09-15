@@ -1,0 +1,57 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add New Book</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit) = addBook()>
+        <div class="mb-3">
+          <label>Book ID</label>
+                <input type="text" class="form-control" name="bookId"  [(ngModel)]="bookid">
+              <hr>
+              <label>Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="name" [(ngModel)]="name">
+            </div>
+            <hr>
+            <label>Price</label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="price" [(ngModel)]="price">
+            </div>
+            <hr>
+            <label>Author</label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="author" [(ngModel)]="author">
+            </div>
+            <hr> 
+            <label>Publisher</label>  
+            <div class="input-group">
+                <input type="text" class="form-control" name="publisher" [(ngModel)]="publisher">
+            </div>
+            <hr> 
+            <label>Version</label>  
+            <div class="input-group">
+                <input type="text" class="form-control" name="version" [(ngModel)]="version">
+            </div>
+            <hr> 
+            <label>Year of Release</label>  
+            <div class="input-group">
+                <input type="text" class="form-control" name="yearofrelease" [(ngModel)]="yearofrelease">
+            </div>
+            <hr> 
+            <label>Year of Revision</label>  
+            <div class="input-group">
+                <input type="text" class="form-control" name="yearofrevision" [(ngModel)]="yearofrevision">
+            </div>
+           </div> 
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click'); addBook();">Save</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add New Book</button>
+    
+  <!-- <pre>{{ closeResult }}</pre> -->
+  

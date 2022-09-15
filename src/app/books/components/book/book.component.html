@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <app-add-book-modal></app-add-book-modal>
+    <hr>
+    <hr>   
+    <button class="btn btn-lg btn-outline-primary" (click)="enableFindBookButton()">Find Book</button>
+      <hr>   
+     <div class="input-group" *ngIf="isFindButtonEnabled">
+                <input type="text" class="form-control" id="name" placeholder="Enter Book Id" name="bookid" [(ngModel)]="bookid">
+                <button type="button" class="btn btn-outline-dark" (click)="findABook()">Find</button>
+        </div>
+    <hr>
+    <button class="btn btn-lg btn-outline-primary" (click)="enableRemoveBookButton()">Remove a Book</button>
+    <hr>   
+        <div class="input-group" *ngIf="isRemoveButtonEnabled">
+                <input type="text" class="form-control" id="name" placeholder="Enter Book Id">
+                <button type="button" class="btn btn-outline-dark" (click)="removeABook()">Remove</button>
+        </div>
+    <hr>
+    <h4>All Books</h4>
+    <table class="table">
+        <thead  class="thead-dark">
+          <tr>
+            <th *ngFor = "let header of bookTableHeader" scope="col">{{header}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let book of books">
+           <td>{{book.bookid}}</td>
+           <td>{{book.name}}</td>
+           <td>{{book.author}}</td>
+           <td>{{book.price}}</td>
+           <td>{{book.publisher}}</td>
+           <td>{{book.yearofrelease}}</td>
+           <td>{{book.yearofrevision}}</td>
+           <td>{{book.version}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr style="color: darkblue;">
+  </div>
